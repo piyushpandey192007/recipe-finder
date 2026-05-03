@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Finder App</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="page-wrap">
+
+    <header class="hero">
+      <div class="hero-badge">🍽️ Powered by TheMealDB</div>
+      <h1>Recipe <span>Finder</span></h1>
+      <p class="hero-sub">Search any dish and discover step-by-step recipes from around the world</p>
+
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="Try &quot;pasta&quot;, &quot;chicken&quot;, &quot;sushi&quot;…" onkeydown="if(event.key==='Enter') getRecipes()">
+        <button onclick="getRecipes()">Search</button>
+      </div>
+
+      <div class="suggestion-chips">
+        <button onclick="quickSearch('Pasta')">🍝 Pasta</button>
+        <button onclick="quickSearch('Chicken')">🍗 Chicken</button>
+        <button onclick="quickSearch('Pizza')">🍕 Pizza</button>
+        <button onclick="quickSearch('Sushi')">🍣 Sushi</button>
+        <button onclick="quickSearch('Tacos')">🌮 Tacos</button>
+      </div>
+    </header>
+
+    <div id="recipeList" class="recipe-grid"></div>
+
+  </div>
+
+  <footer class="footer">
+    <p>© 2026 Recipe Finder All Right Reserved  &nbsp;|&nbsp; Developed by <span>Web wizard</span></p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    function quickSearch(term) {
+      document.getElementById('searchInput').value = term;
+      getRecipes();
+    }
+  </script>
+</body>
+</html>
